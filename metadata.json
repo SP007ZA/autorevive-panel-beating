@@ -1,0 +1,7 @@
+{
+  "name": "AutoRevive - Panel Beating & Salvage Tracking Hub",
+  "description": "Accident damaged vehicle sourcing, Auction Nation profitability calculator, panel beating repair tracker, and client restoration portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
