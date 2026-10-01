@@ -71,10 +71,10 @@ export const TransitTrackerModal: React.FC = () => {
   const currentStepIndex = TRANSIT_STEPS.findIndex((s) => s.id === currentStatus);
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
-      <div className="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-3xl shadow-2xl text-slate-100 flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-[70] overflow-y-auto bg-slate-950/85 backdrop-blur-sm flex items-start sm:items-center justify-center p-2.5 sm:p-5 pb-20 sm:pb-5 overscroll-contain">
+      <div className="bg-slate-900 border border-slate-700/80 rounded-2xl sm:rounded-3xl w-full max-w-3xl shadow-2xl text-slate-100 flex flex-col max-h-[calc(100dvh-2.5rem)] sm:max-h-[90vh] my-auto overflow-hidden animate-in zoom-in-95">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/60">
+        <div className="px-4 py-3 sm:px-6 sm:py-4 border-b border-slate-800 flex items-center justify-between bg-slate-950/80 shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 border border-amber-500/30 flex items-center justify-center">
               <Truck className="w-5 h-5" />
@@ -235,25 +235,25 @@ export const TransitTrackerModal: React.FC = () => {
         </div>
 
         {/* Footer Actions */}
-        <div className="px-6 py-4 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between">
+        <div className="px-4 py-3 sm:px-6 sm:py-4 border-t border-slate-800 bg-slate-950/95 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
           <button
             onClick={handleNotifyClient}
-            className="flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-2 rounded-lg text-xs shadow-md transition-all active:scale-95"
+            className="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-3.5 py-2.5 rounded-xl text-xs shadow-md transition-all active:scale-95 w-full sm:w-auto"
           >
             <Send className="w-3.5 h-3.5" />
             <span>Send Transit Update to Client on WhatsApp</span>
           </button>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
             <button
               onClick={() => setIsTransitModalOpen(false)}
-              className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs"
+              className="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors"
             >
               Cancel
             </button>
             <button
               onClick={handleSave}
-              className="px-5 py-2 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-md transition-all active:scale-95"
+              className="px-5 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-extrabold text-xs shadow-md transition-all active:scale-95"
             >
               Update Transit Status
             </button>

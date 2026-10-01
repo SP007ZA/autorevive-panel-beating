@@ -140,10 +140,10 @@ export const WhatsAppMessengerModal: React.FC = () => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-3 sm:p-5">
-      <div className="bg-slate-900 border border-slate-700/80 rounded-2xl w-full max-w-2xl shadow-2xl text-slate-100 flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-[70] overflow-y-auto bg-slate-950/85 backdrop-blur-sm flex items-start sm:items-center justify-center p-2.5 sm:p-5 pb-20 sm:pb-5 overscroll-contain">
+      <div className="bg-slate-900 border border-slate-700/80 rounded-2xl sm:rounded-3xl w-full max-w-2xl shadow-2xl text-slate-100 flex flex-col max-h-[calc(100dvh-2.5rem)] sm:max-h-[90vh] my-auto overflow-hidden animate-in zoom-in-95">
         {/* Header */}
-        <div className="px-6 py-4 border-b border-slate-800 flex items-center justify-between bg-emerald-950/40">
+        <div className="px-4 py-3 sm:px-6 sm:py-4 border-b border-slate-800 flex items-center justify-between bg-emerald-950/50 shrink-0">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 flex items-center justify-center shadow-lg">
               <MessageSquare className="w-5 h-5" />
@@ -248,22 +248,22 @@ export const WhatsAppMessengerModal: React.FC = () => {
         </div>
 
         {/* Footer Actions */}
-        <div className="px-6 py-4 border-t border-slate-800 bg-slate-950/80 flex items-center justify-between">
-          <div className="flex items-center gap-2 text-slate-400 text-xs">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+        <div className="px-4 py-3 sm:px-6 sm:py-4 border-t border-slate-800 bg-slate-950/95 flex flex-col sm:flex-row items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2 text-slate-400 text-[11px] sm:text-xs">
+            <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
             <span>Opens official WhatsApp client via wa.me protocol.</span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto justify-end">
             <button
               onClick={() => setIsWhatsAppModalOpen(false)}
-              className="px-4 py-2 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs"
+              className="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-300 font-semibold text-xs transition-colors"
             >
               Close
             </button>
             <button
               onClick={handleOpenWhatsApp}
-              className="flex items-center gap-2 px-5 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 transition-all active:scale-95"
+              className="flex items-center gap-2 px-5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-extrabold text-xs shadow-lg shadow-emerald-600/30 transition-all active:scale-95"
             >
               {sentSuccess ? <CheckCircle2 className="w-4 h-4" /> : <ExternalLink className="w-4 h-4" />}
               <span>{sentSuccess ? 'Opened WhatsApp!' : 'Send via WhatsApp'}</span>
