@@ -32,12 +32,12 @@ const AppContent: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950 flex flex-col">
+    <div className="min-h-screen bg-slate-950 text-slate-100 font-sans selection:bg-amber-500 selection:text-slate-950 flex flex-col w-full max-w-full overflow-x-hidden relative">
       {/* Top Navbar */}
       <Navbar />
 
       {/* Main Content Area with mobile bottom padding */}
-      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 pb-24 md:pb-8">
+      <main className="flex-1 max-w-7xl w-full mx-auto px-3 sm:px-6 lg:px-8 py-4 sm:py-6 pb-24 md:pb-8 overflow-x-hidden">
         {currentView === 'home' && <CustomerHomeView />}
         {currentView === 'workshop' && <WorkshopManagerView />}
         {currentView === 'technician' && <TechnicianFloorView />}
@@ -54,14 +54,14 @@ const AppContent: React.FC = () => {
       <PhotoEvidenceViewerModal />
       <StaffLoginModal />
 
-      {/* Persistent Floating WhatsApp Action Button */}
+      {/* Persistent Floating WhatsApp Action Button (Desktop Only; Mobile has Bottom Bar) */}
       <button
         onClick={handleFloatingWhatsApp}
-        className="fixed bottom-20 md:bottom-5 right-4 sm:right-5 z-40 flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold p-3 sm:px-4 sm:py-3 rounded-full shadow-2xl shadow-emerald-950/60 border border-emerald-400/40 active:scale-95 transition-all group"
+        className="hidden md:flex fixed bottom-5 right-5 z-40 items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-3 rounded-full shadow-2xl shadow-emerald-950/60 border border-emerald-400/40 active:scale-95 transition-all group"
         title="WhatsApp AutoRevive Workshop Hub"
       >
         <MessageSquare className="w-5 h-5 fill-current text-white" />
-        <span className="hidden sm:inline text-xs font-extrabold tracking-wide">
+        <span className="text-xs font-extrabold tracking-wide">
           WhatsApp Workshop Hub
         </span>
       </button>

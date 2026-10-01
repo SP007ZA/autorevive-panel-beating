@@ -62,8 +62,8 @@ export const ClientPortalView: React.FC = () => {
   // If client is not yet verified or logged in, show secure single-vehicle login screen
   if (!verifiedProject || !clientVerifiedPin) {
     return (
-      <div className="max-w-xl mx-auto py-12 px-4 space-y-6">
-        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl text-center space-y-5">
+      <div className="max-w-xl w-full mx-auto py-8 sm:py-12 px-3 sm:px-4 space-y-6 overflow-x-hidden">
+        <div className="bg-slate-900 border border-slate-800 rounded-3xl p-5 sm:p-8 shadow-2xl text-center space-y-5">
           <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 mx-auto flex items-center justify-center text-slate-950 shadow-xl shadow-amber-500/20">
             <Lock className="w-8 h-8 text-slate-950" />
           </div>
@@ -152,7 +152,7 @@ export const ClientPortalView: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6 pb-12">
+    <div className="space-y-6 pb-12 w-full max-w-full overflow-x-hidden">
       {/* Top Client Portal Bar - Fully Isolated for this Client */}
       <div className="bg-slate-900 border border-slate-800 rounded-2xl p-4 sm:p-5 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 shadow-xl">
         <div className="flex items-center gap-3">
